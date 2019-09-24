@@ -1,0 +1,12 @@
+<bean id="emp" class="com.cg.springcore.service.Employee" init-method="callFirst" destroy-method="callLast" autowire="byName">
+
+
+<constructor-arg  index="0" value="capgemini"></constructor-arg>
+<constructor-arg  index="1" value="1003"></constructor-arg>
+
+</bean>
+
+<bean id="proj" class="com.cg.springcore.service.Project">
+<property name="projId" value="10001"></property>
+
+</bean>
