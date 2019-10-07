@@ -44,7 +44,12 @@ public class FlightServiceImpl implements FlightService {
 	@Override
 	public boolean updateFlight(BigInteger flightId) {
 		// TODO Auto-generated method stub
-		return flightRepository.updateFlight(flightId);
+		
+		Flight removedFlight=flightRepository.searchByFlightId(flightId);
+		removedFlight.setFlightState(false);
+		
+		 flightRepository.save(removedFlight);
+		 return true;
 	}
 
 	
